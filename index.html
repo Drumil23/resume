@@ -29,16 +29,18 @@
         }
 
         .profile-photo {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: center;
         }
 
         .photo {
-            width: 150px;
-            height: 150px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid #2c3e50;
-            box-shadow: 0 4px 20px rgba(44, 62, 80, 0.1);
+            border: 5px solid #2c3e50;
+            box-shadow: 0 6px 25px rgba(44, 62, 80, 0.15);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -68,7 +70,12 @@
         }
 
         .contact-links {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
         .contact-link {
@@ -77,22 +84,39 @@
             font-weight: 500;
             transition: color 0.3s ease;
             font-size: 0.9em;
-            margin: 0 15px;
         }
 
         .contact-link:hover {
             color: #1a5490;
         }
 
-        .contact-link:not(:last-child)::after {
-            content: " • ";
+        .resume-button {
+            background-color: #2980b9;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .resume-button:hover {
+            background-color: #1a5490;
+            transform: translateY(-1px);
+        }
+
+        .contact-separator {
             color: #bdc3c7;
-            margin-left: 15px;
+            margin: 0 5px;
         }
 
         .location {
-            margin-top: 8px;
-            font-style: italic;
+            margin-top: 10px;
+            font-weight: 500;
+            color: #2c3e50;
         }
 
         .section {
@@ -250,16 +274,18 @@
             }
             
             .contact-links {
-                line-height: 1.8;
+                flex-direction: row;
+                justify-content: center;
+                gap: 10px;
+                flex-wrap: wrap;
             }
             
-            .contact-link {
-                display: inline-block;
-                margin: 2px 8px;
+            .contact-link, .resume-button, .location {
+                margin: 2px 0;
             }
 
-            .contact-link:not(:last-child)::after {
-                margin-left: 8px;
+            .contact-separator {
+                display: inline;
             }
             
             .item-header {
@@ -368,14 +394,19 @@
             <img src="https://via.placeholder.com/150/2c3e50/ffffff?text=D" alt="Drumil Kotecha" class="photo">
         </div>
         <h1 class="name">Drumil Kotecha</h1>
-        <p class="title">Northeastern University Graduate Student</p>
+        <p class="title">MSCS @ Northeastern University</p>
         <div class="contact-info">
             <div class="contact-links">
                 <a href="https://www.linkedin.com/in/drumil-k-a2255922a/" target="_blank" class="contact-link">LinkedIn</a>
+                <span class="contact-separator">•</span>
                 <a href="https://github.com/Drumil23" target="_blank" class="contact-link">GitHub</a>
+                <span class="contact-separator">•</span>
                 <a href="mailto:kotecha.d@northeastern.edu" class="contact-link">kotecha.d@northeastern.edu</a>
+                <span class="contact-separator">•</span>
+                <a href="#" class="resume-button" onclick="downloadResume()">Resume</a>
+                <span class="contact-separator">•</span>
+                <span class="location">Boston, MA</span>
             </div>
-            <p class="location">Boston, MA</p>
         </div>
     </div>
 
@@ -677,9 +708,19 @@ document.querySelectorAll('.item-title').forEach(title => {
     });
 });
 
+// Resume download function
+function downloadResume() {
+    // You can replace this URL with your actual PDF resume link
+    // For now, it will show an alert
+    alert('Please upload your PDF resume to GitHub and replace this alert with the download link!');
+    
+    // When you have your PDF ready, uncomment and modify this line:
+    // window.open('path/to/your/resume.pdf', '_blank');
+}
+
 // Console message (Ivy League touch)
 console.log('%c🎓 Welcome to Drumil Kotecha\'s Resume', 'color: #2980b9; font-size: 16px; font-weight: bold;');
-console.log('%cFuture Northeastern University Graduate Student', 'color: #27ae60; font-size: 12px;');
+console.log('%cMSCS @ Northeastern University', 'color: #27ae60; font-size: 12px;');
 console.log('%cBuilt with modern web technologies and attention to detail.', 'color: #7f8c8d; font-size: 10px;');
 </script>
 
