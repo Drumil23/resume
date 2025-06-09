@@ -156,6 +156,15 @@
             color: #34495e;
             font-style: italic;
             margin-top: 2px;
+            display: flex; /* Added flex for logo alignment */
+            align-items: center; /* Vertically align items */
+            gap: 10px; /* Space between text and logo */
+        }
+
+        .org-logo {
+            height: 25px; /* Adjust as needed */
+            width: auto;
+            vertical-align: middle;
         }
 
         .item-date {
@@ -398,13 +407,9 @@
         <div class="contact-info">
             <div class="contact-links">
                 <a href="https://www.linkedin.com/in/drumil-k-a2255922a/" target="_blank" class="contact-link">LinkedIn</a>
-                <span class="contact-separator">•</span>
                 <a href="https://github.com/Drumil23" target="_blank" class="contact-link">GitHub</a>
-                <span class="contact-separator">•</span>
                 <a href="mailto:kotecha.d@northeastern.edu" class="contact-link">kotecha.d@northeastern.edu</a>
-                <span class="contact-separator">•</span>
                 <a href="#" class="resume-button" onclick="downloadResume()">Resume</a>
-                <span class="contact-separator">•</span>
                 <span class="location">Boston, MA</span>
             </div>
         </div>
@@ -417,7 +422,7 @@
             <div class="item-header">
                 <div>
                     <div class="item-title">Master of Science in Computer Science</div>
-                    <div class="item-organization">Northeastern University (Khoury College of Computer Sciences), Boston, MA</div>
+                    <div class="item-organization">Northeastern University (Khoury College of Computer Sciences), Boston, MA <img src="https://via.placeholder.com/25/2980b9/ffffff?text=NU" alt="Northeastern University Logo" class="org-logo"></div>
                 </div>
                 <div class="item-date">Aug 2025 - May 2027</div>
             </div>
@@ -430,7 +435,7 @@
             <div class="item-header">
                 <div>
                     <div class="item-title">Bachelor of Technology in Computer Engineering</div>
-                    <div class="item-organization">NMIMS University, Mumbai, India</div>
+                    <div class="item-organization">NMIMS University, Mumbai, India <img src="https://via.placeholder.com/25/2980b9/ffffff?text=NM" alt="NMIMS University Logo" class="org-logo"></div>
                 </div>
                 <div class="item-date">Jun 2019 - May 2023</div>
             </div>
