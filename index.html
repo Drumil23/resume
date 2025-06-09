@@ -26,17 +26,33 @@
             margin-bottom: 50px;
             padding-bottom: 30px;
             border-bottom: 1px solid #e8e8e8;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center items horizontally in a column */
+        }
+
+        .header-logos {
+            display: flex;
+            justify-content: center;
+            gap: 30px; /* Space between logos */
+            margin-bottom: 20px; /* Space between logos and photo */
+        }
+
+        .header-logo {
+            height: 120px; /* Make logos big */
+            width: auto;
+            object-fit: contain;
         }
 
         .profile-photo {
-            margin-bottom: 65px;
+            margin-bottom: 25px; /* Adjust margin as needed */
             display: flex;
             justify-content: center;
         }
 
         .photo {
-            width: 250px;
-            height: 250px;
+            width: 250px; /* Made photo larger */
+            height: 250px; /* Made photo larger */
             border-radius: 50%;
             object-fit: cover;
             border: 5px solid #2c3e50;
@@ -50,7 +66,7 @@
         }
 
         .name {
-            font-size: 2.5em;
+            font-size: 2.8em; /* Slightly larger name */
             font-weight: 300;
             letter-spacing: 2px;
             margin-bottom: 10px;
@@ -58,7 +74,7 @@
         }
 
         .title {
-            font-size: 1.2em;
+            font-size: 1.3em; /* Slightly larger title */
             color: #2980b9;
             font-weight: 500;
             margin-bottom: 20px;
@@ -67,6 +83,9 @@
         .contact-info {
             font-size: 0.95em;
             color: #5d6d7e;
+            display: flex; /* Make contact-info a flex container */
+            flex-direction: column; /* Stack items vertically */
+            align-items: center; /* Center items horizontally */
         }
 
         .contact-links {
@@ -75,7 +94,7 @@
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 20px; /* Space between links */
         }
 
         .contact-link {
@@ -93,14 +112,16 @@
         .resume-button {
             background-color: #2980b9;
             color: white;
-            padding: 6px 14px;
+            padding: 8px 18px; /* Slightly larger button */
             border-radius: 5px;
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.9em;
+            font-size: 1em; /* Adjust font size */
             transition: background-color 0.3s ease, transform 0.2s ease;
             border: none;
             cursor: pointer;
+            margin-top: 10px; /* Space above the button */
+            display: inline-block; /* Ensure it respects padding and width */
         }
 
         .resume-button:hover {
@@ -109,14 +130,13 @@
         }
 
         .contact-separator {
-            color: #bdc3c7;
-            margin: 0 5px;
+            display: none; /* Removed separators as per request */
         }
 
         .location {
-            margin-top: 10px;
+            margin-top: 10px; /* Keep some separation */
             font-weight: 500;
-            color: #2c3e50;
+            color: #2c3e50; /* Original color, but styling from contact-link applies */
         }
 
         .section {
@@ -162,7 +182,7 @@
         }
 
         .org-logo {
-            height: 80px; /* Adjust as needed */
+            height: 40px; /* Smaller for inline use within education */
             width: auto;
             vertical-align: middle;
         }
@@ -282,11 +302,18 @@
                 font-size: 2em;
             }
             
+            .header-logos {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .header-logo {
+                height: 80px; /* Adjust for smaller screens */
+            }
+
             .contact-links {
-                flex-direction: row;
-                justify-content: center;
-                gap: 10px;
-                flex-wrap: wrap;
+                flex-direction: column; /* Stack links vertically on small screens */
+                gap: 5px;
             }
             
             .contact-link, .resume-button, .location {
@@ -294,7 +321,7 @@
             }
 
             .contact-separator {
-                display: inline;
+                display: none;
             }
             
             .item-header {
@@ -307,8 +334,8 @@
             }
 
             .photo {
-                width: 120px;
-                height: 120px;
+                width: 150px; /* Smaller on mobile */
+                height: 150px; /* Smaller on mobile */
             }
         }
 
@@ -399,8 +426,12 @@
 </head>
 <body>
     <div class="header">
+        <div class="header-logos">
+            <img src="images/nmims-logo.png" alt="NMIMS University Logo" class="header-logo">
+            <img src="images/NU_seal.png" alt="Northeastern University Logo" class="header-logo">
+        </div>
         <div class="profile-photo">
-            <img src="images\drumil-resume-photo.png" alt="Drumil Kotecha" class="photo">
+            <img src="images/drumil-resume-photo.png" alt="Drumil Kotecha" class="photo">
         </div>
         <h1 class="name">Drumil Kotecha</h1>
         <p class="title">MSCS @ Northeastern University</p>
@@ -409,8 +440,10 @@
                 <a href="https://www.linkedin.com/in/drumil-k-a2255922a/" target="_blank" class="contact-link">LinkedIn</a>
                 <a href="https://github.com/Drumil23" target="_blank" class="contact-link">GitHub</a>
                 <a href="mailto:kotecha.d@northeastern.edu" class="contact-link">kotecha.d@northeastern.edu</a>
-                <span class="location">Boston, MA</span><br>
-                <a href="#" class="resume-button" onclick="downloadResume()">Resume</a>                
+                <span class="contact-link">Boston, MA</span>
+            </div>
+            <div>
+                <a href="#" class="resume-button" onclick="downloadResume()">Resume</a>         
             </div>
         </div>
     </div>
@@ -421,9 +454,8 @@
         <div class="education-item">
             <div class="item-header">
                 <div>
-                    <img src="images\NU_seal.png" alt="Northeastern University Logo" class="org-logo">
                     <div class="item-title">Master of Science in Computer Science</div>
-                    <div class="item-organization">Northeastern University (Khoury College of Computer Sciences), Boston, MA </div>
+                    <div class="item-organization">Northeastern University (Khoury College of Computer Sciences), Boston, MA <img src="images/NU_seal.png" alt="Northeastern University Logo" class="org-logo"></div>
                 </div>
                 <div class="item-date">Aug 2025 - May 2027</div>
             </div>
@@ -435,9 +467,8 @@
         <div class="education-item">
             <div class="item-header">
                 <div>
-                    <img src="images\nmims-logo.png" alt="NMIMS University Logo" class="org-logo">
                     <div class="item-title">Bachelor of Technology in Computer Engineering</div>
-                    <div class="item-organization">NMIMS University, Mumbai, India </div>
+                    <div class="item-organization">NMIMS University, Mumbai, India <img src="images/nmims-logo.png" alt="NMIMS University Logo" class="org-logo"></div>
                 </div>
                 <div class="item-date">Jun 2019 - May 2023</div>
             </div>
@@ -717,12 +748,15 @@ document.querySelectorAll('.item-title').forEach(title => {
 
 // Resume download function
 function downloadResume() {
-    // You can replace this URL with your actual PDF resume link
-    // For now, it will show an alert
-    alert('Please upload your PDF resume to GitHub and replace this alert with the download link!');
-    
-    // When you have your PDF ready, uncomment and modify this line:
-    // window.open('path/to/your/resume.pdf', '_blank');
+    // You need to place your 'Drumil_Kotecha_Resume.pdf' file in the same directory as this HTML file.
+    // Convert your .docx to .pdf for best results on the web.
+    const resumePath = 'Drumil_Kotecha_Resume.pdf'; // Path to your resume PDF
+    const link = document.createElement('a');
+    link.href = resumePath;
+    link.download = 'Drumil_Kotecha_Resume.pdf'; // Suggested filename for download
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
 }
 
 // Console message (Ivy League touch)
